@@ -1,0 +1,257 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Menu Utama */
+#menu {
+    text-align: center;
+    padding: 20px;
+}
+
+#menu h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff0000;
+}
+
+#menu button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#menu button:hover {
+    background-color: #cc0000;
+}
+
+/* Pilihan World */
+#world-select {
+    margin-top: 20px;
+}
+
+#world-select h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #00ff00;
+}
+
+#world-select button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#world-select button:hover {
+    background-color: #00cc00;
+}
+
+/* Game Container */
+#game {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    display: none; /* Sembunyikan game sampai dimulai */
+}
+
+/* Stage */
+#stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mario */
+#mario {
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    width: 40px;
+    height: 60px;
+    background-image: url('assets/mario-sprite.png');
+    background-size: 160px 60px;
+    animation: walk 0.5s steps(4) infinite;
+}
+
+/* Goomba */
+#goomba {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    background-image: url('assets/goomba-sprite.png');
+    background-size: cover;
+    animation: walk 1s steps(2) infinite;
+}
+
+/* Koopa */
+#koopa {
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+    width: 55px; /* Lebar satu frame Koopa (275px / 5 frame = 55px) */
+    height: 161px; /* Tinggi sprite Koopa */
+    background-image: url('assets/koopa-sprite.png');
+    background-size: 275px 161px; /* Ukuran total sprite sheet */
+    animation: walk 1s steps(5) infinite; /* Animasi jalan */
+}
+
+/* Pipe */
+#pipe {
+    position: absolute;
+    bottom: 100px;
+    right: 300px;
+    width: 60px;
+    height: 100px;
+    background-color: green;
+}
+
+/* Hole */
+#hole {
+    position: absolute;
+    bottom: 0;
+    right: 400px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+}
+
+/* Coin */
+#coin {
+    position: absolute;
+    bottom: 150px;
+    right: 500px;
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/coin-sprite.png');
+    background-size: cover;
+}
+
+/* Mushroom */
+#mushroom {
+    position: absolute;
+    bottom: 150px;
+    right: 600px;
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/mushroom-sprite.png');
+    background-size: cover;
+}
+
+/* Brick */
+#brick {
+    position: absolute;
+    bottom: 200px;
+    left: 300px;
+    width: 40px; /* Sesuaikan ukuran brick */
+    height: 40px;
+    background-image: url('assets/brick-sprite.png');
+    background-size: cover;
+}
+
+/* Castle */
+#castle {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 100px; /* Sesuaikan ukuran castle */
+    height: 150px;
+    background-image: url('assets/castle-sprite.png');
+    background-size: cover;
+}
+
+/* Block */
+#block {
+    position: absolute;
+    bottom: 200px;
+    left: 400px;
+    width: 40px; /* Sesuaikan ukuran block */
+    height: 40px;
+    background-image: url('assets/block-sprite.png');
+    background-size: cover;
+}
+
+/* Tombol Kontrol di Layar */
+#controls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+#controls button {
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+#controls button:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Animasi Jalan */
+@keyframes walk {
+    from { background-position: 0px; }
+    to { background-position: -160px; } /* Sesuaikan dengan lebar sprite sheet */
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Background untuk setiap stage */
+#stage.grassland {
+    background-image: url('assets/grassland-bg.png');
+}
+
+#stage.underground {
+    background-image: url('assets/underground-bg.png');
+}
+
+#stage.water-world {
+    background-image: url('assets/water-world-bg.png');
+}
+
+#stage.castle {
+    background-image: url('assets/castle-bg.png');
+}

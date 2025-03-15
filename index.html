@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Bros Classic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Mario Bros Classic</h1>
+        <button id="start-btn">Start Game</button>
+        <div id="world-select" class="hidden">
+            <h2>Pilih World</h2>
+            <button id="world1-btn">World 1-1: Grassland</button>
+            <button id="world1-2-btn">World 1-2: Underground</button>
+            <button id="world1-3-btn">World 1-3: Water World</button>
+            <button id="world1-4-btn">World 1-4: Castle</button>
+        </div>
+        <button id="quit-btn">Quit</button>
+    </div>
+
+    <div id="game" class="hidden">
+        <div id="stage">
+            <div id="mario"></div>
+            <div id="goomba"></div>
+            <div id="koopa"></div>
+            <div id="pipe"></div>
+            <div id="hole"></div>
+            <div id="coin"></div>
+            <div id="mushroom"></div>
+            <div id="brick"></div>
+            <div id="castle"></div>
+            <div id="block"></div>
+        </div>
+
+        <!-- Tombol Kontrol di Layar -->
+        <div id="controls">
+            <button id="left-btn">⬅️</button>
+            <button id="right-btn">➡️</button>
+            <button id="jump-btn">🔼</button>
+        </div>
+    </div>
+
+    <!-- Audio untuk suara -->
+    <audio id="jump-sound" src="assets/jump.mp3"></audio>
+    <audio id="coin-sound" src="assets/coin.mp3"></audio>
+    <audio id="powerup-sound" src="assets/powerup.mp3"></audio>
+    <audio id="gameover-sound" src="assets/gameover.mp3"></audio>
+    <audio id="background-music" src="assets/background-music.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
